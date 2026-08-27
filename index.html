@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SevaConnect — Find someone who actually shows up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header>
+  <nav class="wrap">
+    <a href="#main" class="logo">
+      <svg class="bell-mini" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a5 5 0 0 0-5 5v3.2c0 .7-.24 1.38-.68 1.93L5 15h14l-1.32-1.87A3.2 3.2 0 0 1 17 11.2V8a5 5 0 0 0-5-5Z"/><path d="M10 18a2 2 0 0 0 4 0"/></svg>
+      SevaConnect
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#categories">Explore services</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#trust">Reviews</a></li>
+      <li><a href="#for-pros">For providers</a></li>
+    </ul>
+    <button class="nav-cta">Book a pro</button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Verified help, nearby</p>
+        <h1>Find someone who <em>actually shows up.</em></h1>
+        <p class="lead">Drivers, plumbers, cooks, carpenters, painters and electricians — checked, rated by your neighbours, and booked in a few taps.</p>
+
+        <form class="search-card" id="searchForm">
+          <label for="category">Service</label>
+          <select id="category">
+            <option value="">What do you need help with?</option>
+            <option>Plumber</option>
+            <option>Cook</option>
+            <option>Driver</option>
+            <option>Carpenter</option>
+            <option>Painter</option>
+            <option>Electrician</option>
+          </select>
+          <label for="location">Location</label>
+          <input id="location" type="text" placeholder="Your area or pin code" />
+          <button type="submit">Find help</button>
+        </form>
+        <p class="search-note" id="searchNote"></p>
+      </div>
+
+      <div class="bell-stage">
+        <div class="bell-ring-wrap">
+          <button id="bellBtn" aria-label="Ring for service">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a5 5 0 0 0-5 5v3.2c0 .7-.24 1.38-.68 1.93L5 15h14l-1.32-1.87A3.2 3.2 0 0 1 17 11.2V8a5 5 0 0 0-5-5Z"/><path d="M10 18a2 2 0 0 0 4 0"/></svg>
+          </button>
+          <span class="bell-toast" id="bellToast">Ting! Pros notified</span>
+        </div>
+        <p class="bell-caption">RING FOR SERVICE — it's how counters<br>have always worked. Now it's an app.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section" id="categories">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The board</p>
+        <h2>Six trades, one call away.</h2>
+        <p>Every listing carries an ID check, a service area, and a history of completed jobs — pinned up like a proper notice board, minus the fine print.</p>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-tile cat-1" href="#">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.66 5.66l1.2 1.2-6.5 6.5 1.5 1.5 6.5-6.5 1.2 1.2a4 4 0 0 0 5.66-5.66l-2.6 2.6-2-.7-.7-2Z"/></svg>
+          <div><div class="name">Plumber</div><div class="meta">Leaks, fittings, tanks</div></div>
+        </a>
+        <a class="cat-tile cat-2" href="#">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18v-6a8 8 0 0 1 16 0v6"/><path d="M2 18h4v3H3a1 1 0 0 1-1-1v-2Z"/><path d="M18 18h4v2a1 1 0 0 1-1 1h-3v-3Z"/></svg>
+          <div><div class="name">Cook</div><div class="meta">Daily meals, events</div></div>
+        </a>
+        <a class="cat-tile cat-3" href="#">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/><path d="M12 4V2M4 12H2M12 22v-2M22 12h-2"/></svg>
+          <div><div class="name">Driver</div><div class="meta">Daily commute, trips</div></div>
+        </a>
+        <a class="cat-tile cat-4" href="#">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h6l2-3 3 6 2-3h5"/></svg>
+          <div><div class="name">Carpenter</div><div class="meta">Furniture, fittings</div></div>
+        </a>
+        <a class="cat-tile cat-5" href="#">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3 21 6l-9.5 9.5-4 1 1-4L18 3Z"/><path d="M6 18c-1 1-1 2-3 3"/></svg>
+          <div><div class="name">Painter</div><div class="meta">Walls, touch-ups</div></div>
+        </a>
+        <a class="cat-tile cat-6" href="#">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
+          <div><div class="name">Electrician</div><div class="meta">Wiring, repairs</div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="wrap section" style="padding-top:64px;padding-bottom:64px;">
+      <div class="section-head">
+        <p class="eyebrow">No middlemen</p>
+        <h2>From "I need help" to booked, in three steps.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <p class="tag">FIRST</p>
+          <h3>Say what's broken</h3>
+          <p>Pick a trade and tell us the job — a leaking tap, a meal for six, a coat of paint on one wall.</p>
+        </div>
+        <div class="step">
+          <p class="tag">THEN</p>
+          <h3>Compare who's nearby</h3>
+          <p>See verified providers with their rating, rate card, and how far they are from you.</p>
+        </div>
+        <div class="step">
+          <p class="tag">FINALLY</p>
+          <h3>Book and pay in the app</h3>
+          <p>Confirm a time, track the visit, and settle payment without haggling at the door.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="section" id="trust">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Why people stick around</p>
+        <h2>Trust, the boring way — checked, not just claimed.</h2>
+      </div>
+      <div class="trust-strip">
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          ID &amp; address verified
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 17.3 6.2 20l1.1-6.5L2.5 9l6.5-1L12 2l3 6 6.5 1-4.8 4.5 1.1 6.5z"/></svg>
+          Rated by your neighbours
+        </div>
+        <div class="trust-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h11"/></svg>
+          Upfront pricing, no surprises
+        </div>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial">
+          <p class="quote">Our regular plumber retired and I dreaded starting over. Booked a replacement through SevaConnect the same evening — he'd already fixed two similar tanks in my building.</p>
+          <p class="who">— Anjali, Nashik Road</p>
+        </div>
+        <div class="testimonial">
+          <p class="quote">I list myself as a carpenter here instead of waiting near the market for work. My calendar fills up a week ahead now, and I set my own rates.</p>
+          <p class="who">— Suresh, independent carpenter</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR PROVIDERS -->
+  <section class="section" id="for-pros" style="padding-top:0;">
+    <div class="wrap">
+      <div class="pro-cta">
+        <div>
+          <h2>Do the work. Let us find the customers.</h2>
+          <p>List your trade, set your service area and rates, and get notified the moment someone nearby needs exactly what you do.</p>
+        </div>
+        <button class="btn-white">Join as a provider</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a5 5 0 0 0-5 5v3.2c0 .7-.24 1.38-.68 1.93L5 15h14l-1.32-1.87A3.2 3.2 0 0 1 17 11.2V8a5 5 0 0 0-5-5Z"/><path d="M10 18a2 2 0 0 0 4 0"/></svg>
+        SevaConnect
+      </div>
+      <p class="about">A neighbourhood notice board for finding people who fix, cook, drive, build and paint — verified before they ever knock on your door.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#categories">Plumbers</a></li>
+        <li><a href="#categories">Cooks</a></li>
+        <li><a href="#categories">Drivers</a></li>
+        <li><a href="#categories">Carpenters</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#trust">Reviews</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Providers</h4>
+      <ul>
+        <li><a href="#for-pros">Join as a pro</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 SevaConnect. A student mini-project.</span>
+    <span>Made for neighbourhoods, not just metros.</span>
+  </div>
+</footer>
+<script src="index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | SevaConnect</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <header class="auth-header">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">♧</span> SevaConnect
+    </a>
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </header>
+
+  <main class="login-container">
+    <section class="login-card">
+      <div class="auth-heading">
+        <p class="eyebrow">WELCOME BACK</p>
+        <h1>Good to see you.</h1>
+        <p>Login to continue with SevaConnect.</p>
+      </div>
+
+      <form id="loginForm">
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+        >
+
+        <label for="password">Password</label>
+        <div class="password-wrap">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          >
+          <button type="button" id="togglePassword"
+                  class="password-toggle"
+                  aria-label="Show password"
+                  aria-pressed="false">
+            Show
+          </button>
+        </div>
+
+        <p id="formMessage" class="form-message" role="status"
+           aria-live="polite"></p>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          Login
+        </button>
+      </form>
+
+      <p class="auth-switch">
+        Don't have an account?
+        <a href="register.html">Register here</a>
+      </p>
+
+      <a href="index.html" class="home-link">Back to homepage</a>
+    </section>
+
+    <aside class="login-side">
+      <span class="side-icon">♧</span>
+      <p class="eyebrow">YOUR LOCAL CONNECTION</p>
+      <h2>Good service starts with the right connection.</h2>
+      <p>
+        Sign in to access your account and connect with your
+        neighbourhood's service community.
+      </p>
+    </aside>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>

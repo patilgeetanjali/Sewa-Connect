@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+  <header class="auth-header">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">♧</span> SevaConnect
+    </a>
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </header>
+
+  <main class="auth-container">
+    <section class="auth-card">
+      <div class="auth-heading">
+        <p class="eyebrow">JOIN YOUR NEIGHBOURHOOD</p>
+        <h1>Create an account</h1>
+        <p>Find trusted local services or start offering your skills.</p>
+      </div>
+
+      <form id="registerForm">
+        <label for="role">I want to join as</label>
+        <select id="role" name="role" required>
+          <option value="customer">Customer</option>
+          <option value="provider">Service Provider</option>
+        </select>
+
+        <label for="name">Full name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your full name"
+          autocomplete="name"
+          minlength="2"
+          required
+        >
+
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+        >
+
+        <label for="phone">Mobile number</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Enter 10-digit mobile number"
+          inputmode="numeric"
+          pattern="[6-9][0-9]{9}"
+          title="Enter a valid 10-digit Indian mobile number"
+          autocomplete="tel"
+          required
+        >
+
+        <div id="providerFields" hidden>
+          <label for="service">Service category</label>
+          <select id="service" name="service">
+            <option value="">Select your service</option>
+            <option value="Plumber">Plumber</option>
+            <option value="Cook">Cook</option>
+            <option value="Driver">Driver</option>
+            <option value="Carpenter">Carpenter</option>
+            <option value="Painter">Painter</option>
+            <option value="Electrician">Electrician</option>
+          </select>
+
+          <label for="experience">Experience (in years)</label>
+          <input
+            type="number"
+            id="experience"
+            name="experience"
+            min="0"
+            max="60"
+            placeholder="e.g. 2"
+          >
+        </div>
+
+        <label for="address">Address</label>
+        <textarea
+          id="address"
+          name="address"
+          placeholder="Enter your locality and address"
+          rows="3"
+          required
+        ></textarea>
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="At least 8 characters"
+          minlength="8"
+          autocomplete="new-password"
+          required
+        >
+
+        <label for="confirmPassword">Confirm password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Enter password again"
+          minlength="8"
+          autocomplete="new-password"
+          required
+        >
+
+        <p id="formMessage" class="form-message" role="status"
+           aria-live="polite"></p>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          Create Account
+        </button>
+      </form>
+
+      <p class="auth-switch">
+        Already have an account?
+        <a href="login.html">Login here</a>
+      </p>
+
+      <p class="terms-note">
+        By registering, you agree to use SevaConnect responsibly.
+      </p>
+    </section>
+
+    <aside class="auth-side">
+      <span class="side-icon">⌂</span>
+      <p class="eyebrow">LOCAL HELP. REAL PEOPLE.</p>
+      <h2>Your neighbourhood, working together.</h2>
+      <p>
+        Book reliable local services as a customer, or connect with
+        nearby customers as a service provider.
+      </p>
+      <ul>
+        <li>✓ Easy service discovery</li>
+        <li>✓ Customer and provider accounts</li>
+        <li>✓ A simpler way to connect locally</li>
+      </ul>
+    </aside>
+  </main>
+
+  <script src="register.js"></script>
+</body>
+</html>

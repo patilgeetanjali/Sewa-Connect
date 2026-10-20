@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard | SevaConnect</title>
+    <link rel="stylesheet" href="customer-dashboard.css">
+    <script src="customer-dashboard.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a href="/" class="brand">SevaConnect</a>
+        <div class="header-right">
+            <span id="welcomeName">Welcome!</span>
+            <button id="logoutBtn" class="btn btn-outline">Logout</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h1>Customer Dashboard</h1>
+            <p>Find trusted local professionals and manage your bookings.</p>
+        </section>
+
+        <p id="pageMessage" class="message" role="status"></p>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>My Profile</h2>
+                    <p>Your registration details are read-only except for your address.</p>
+                </div>
+                <button id="editAddressBtn" class="btn">Edit Address</button>
+            </div>
+
+            <form id="profileForm" class="profile-grid">
+                <label>
+                    Full Name
+                    <input id="profileName" readonly>
+                </label>
+                <label>
+                    Email
+                    <input id="profileEmail" type="email" readonly>
+                </label>
+                <label>
+                    Phone Number
+                    <input id="profilePhone" readonly>
+                </label>
+                <label>
+                    Address
+                    <input id="profileAddress" required readonly>
+                </label>
+
+                <div id="addressActions" class="form-actions hidden">
+                    <button type="submit" class="btn">Save Address</button>
+                    <button type="button" id="cancelAddressBtn"
+                            class="btn btn-outline">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>Find a Service</h2>
+                    <p>Browse services offered by approved providers.</p>
+                </div>
+                <select id="categoryFilter" aria-label="Filter by category">
+                    <option value="">All Categories</option>
+                </select>
+            </div>
+
+            <div id="servicesList" class="services-grid">
+                <p>Loading services...</p>
+            </div>
+        </section>
+
+        <section class="panel" id="bookingSection">
+            <h2>Book a Service</h2>
+            <p id="selectedServiceText">Choose a service from the list above.</p>
+
+            <form id="bookingForm" class="booking-grid">
+                <input type="hidden" id="serviceId">
+
+                <label>
+                    Booking Date
+                    <input id="bookingDate" type="date" required>
+                </label>
+
+                <label>
+                    Service Address
+                    <input id="bookingAddress" required
+                           placeholder="Enter the address for the service">
+                </label>
+
+                <label class="full-width">
+                    Additional Details (optional)
+                    <textarea id="bookingDescription" rows="3"
+                              placeholder="Describe the work you need"></textarea>
+                </label>
+
+                <div class="form-actions full-width">
+                    <button type="submit" id="bookBtn" class="btn" disabled>
+                        Submit Booking
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <h2>My Booking History</h2>
+                    <p>Check the status of your service requests.</p>
+                </div>
+                <button id="refreshBookingsBtn" class="btn btn-outline">
+                    Refresh
+                </button>
+            </div>
+
+            <div id="bookingsList">
+                <p>Loading bookings...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>SevaConnect — Local services, made easier.</p>
+    </footer>
+</body>
+</html>

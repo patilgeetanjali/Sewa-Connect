@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Dashboard | SevaConnect</title>
+    <link rel="stylesheet" href="provider-dashboard.css">
+    <script src="provider-dashboard.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a href="/" class="brand">SevaConnect</a>
+        <div class="header-right">
+            <span id="providerName">Provider</span>
+            <button id="logoutBtn" class="btn secondary">Logout</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <p class="eyebrow">PROVIDER PORTAL</p>
+            <h1>Manage your services.</h1>
+            <p>Manage your listings and respond to customer bookings.</p>
+            <p>Account status: <strong id="accountStatus">Loading...</strong></p>
+        </section>
+
+        <p id="pageMessage" role="status" aria-live="polite"></p>
+
+        <section class="panel">
+            <h2>Add a service</h2>
+            <p class="muted">Your account must be approved before you can list services.</p>
+
+            <form id="serviceForm">
+                <label for="category">Service category</label>
+                <select id="category" required>
+                    <option value="">Select a category</option>
+                </select>
+
+                <label for="price">Price per day (₹)</label>
+                <input id="price" type="number" min="0" max="99999999.99"
+                       step="0.01" required>
+
+                <label for="description">Service description</label>
+                <textarea id="description" rows="3"
+                          maxlength="2000"
+                          placeholder="Describe the service you provide"></textarea>
+
+                <button class="btn" type="submit">Add service</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <h2>My services</h2>
+                <button id="refreshServicesBtn" class="btn secondary">
+                    Refresh
+                </button>
+            </div>
+            <div id="servicesList">Loading services...</div>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <h2>Customer bookings</h2>
+                <button id="refreshBookingsBtn" class="btn secondary">
+                    Refresh
+                </button>
+            </div>
+            <div id="bookingsList">Loading bookings...</div>
+        </section>
+    </main>
+</body>
+</html>

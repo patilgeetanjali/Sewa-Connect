@@ -23,7 +23,10 @@
       <li><a href="#trust">Reviews</a></li>
       <li><a href="#for-pros">For providers</a></li>
     </ul>
-    <button class="nav-cta">Book a pro</button>
+    <div class="auth-buttons">
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="register.html" class="register-btn">Register</a>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -39,22 +42,7 @@
         <h1>Find someone who <em>actually shows up.</em></h1>
         <p class="lead">Drivers, plumbers, cooks, carpenters, painters and electricians — checked, rated by your neighbours, and booked in a few taps.</p>
 
-        <form class="search-card" id="searchForm">
-          <label for="category">Service</label>
-          <select id="category">
-            <option value="">What do you need help with?</option>
-            <option>Plumber</option>
-            <option>Cook</option>
-            <option>Driver</option>
-            <option>Carpenter</option>
-            <option>Painter</option>
-            <option>Electrician</option>
-          </select>
-          <label for="location">Location</label>
-          <input id="location" type="text" placeholder="Your area or pin code" />
-          <button type="submit">Find help</button>
-        </form>
-        <p class="search-note" id="searchNote"></p>
+        
       </div>
 
       <div class="bell-stage">

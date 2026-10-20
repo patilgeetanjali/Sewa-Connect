@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | SevaConnect</title>
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <script src="admin-dashboard.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/">SevaConnect <span>ADMIN</span></a>
+        <button id="logoutBtn" class="btn secondary">Logout</button>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <p class="eyebrow">ADMINISTRATION</p>
+            <h1>Control centre</h1>
+            <p>Manage provider registrations, users, and service categories.</p>
+        </section>
+
+        <p id="message" role="status" aria-live="polite"></p>
+
+        <section class="stats" id="stats">
+            <article class="stat-card">
+                <span>Total users</span>
+                <strong id="totalUsers">—</strong>
+            </article>
+            <article class="stat-card">
+                <span>Customers</span>
+                <strong id="totalCustomers">—</strong>
+            </article>
+            <article class="stat-card">
+                <span>Providers</span>
+                <strong id="totalProviders">—</strong>
+            </article>
+            <article class="stat-card">
+                <span>Pending approvals</span>
+                <strong id="pendingProviders">—</strong>
+            </article>
+        </section>
+
+        <nav class="tabs" aria-label="Admin sections">
+            <button class="tab active" data-panel="approvals">Provider approvals</button>
+            <button class="tab" data-panel="users">User management</button>
+            <button class="tab" data-panel="categories">Categories</button>
+        </nav>
+
+        <section class="panel" id="approvalsPanel">
+            <div class="section-heading">
+                <div>
+                    <h2>Provider approvals</h2>
+                    <p class="muted">Review new provider registrations.</p>
+                </div>
+                <button id="refreshProviders" class="btn secondary">Refresh</button>
+            </div>
+            <div id="providersList">Loading providers...</div>
+        </section>
+
+        <section class="panel hidden" id="usersPanel">
+            <div class="section-heading">
+                <div>
+                    <h2>User management</h2>
+                    <p class="muted">Search accounts and manage customer/provider access.</p>
+                </div>
+                <button id="refreshUsers" class="btn secondary">Refresh</button>
+            </div>
+
+            <form id="userSearchForm" class="filters">
+                <input id="userSearch" type="search"
+                       placeholder="Search name, email, or phone">
+                <select id="roleFilter">
+                    <option value="">All roles</option>
+                    <option value="customer">Customer</option>
+                    <option value="provider">Provider</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <select id="statusFilter">
+                    <option value="">All statuses</option>
+                    <option value="active">Active</option>
+                    <option value="pending">Pending</option>
+                    <option value="rejected">Rejected</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+                <button class="btn" type="submit">Search</button>
+            </form>
+
+            <div id="usersList">Loading users...</div>
+        </section>
+
+        <section class="panel hidden" id="categoriesPanel">
+            <div>
+                <h2>Service categories</h2>
+                <p class="muted">Add categories and control whether they are available for new services.</p>
+            </div>
+
+            <form id="categoryForm" class="category-form">
+                <label for="categoryName">Category name</label>
+                <input id="categoryName" maxlength="100"
+                       placeholder="e.g. Carpenter" required>
+
+                <label for="categoryDescription">Description</label>
+                <textarea id="categoryDescription" maxlength="255"
+                          rows="2" placeholder="Describe this service category"></textarea>
+
+                <button class="btn" type="submit">Add category</button>
+            </form>
+
+            <div class="section-heading category-heading">
+                <h3>All categories</h3>
+                <button id="refreshCategories" class="btn secondary">Refresh</button>
+            </div>
+            <div id="categoriesList">Loading categories...</div>
+        </section>
+    </main>
+</body>
+</html>

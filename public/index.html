@@ -66,27 +66,27 @@
         <p>Every listing carries an ID check, a service area, and a history of completed jobs — pinned up like a proper notice board, minus the fine print.</p>
       </div>
       <div class="cat-grid">
-        <a class="cat-tile cat-1" href="#">
+        <a class="cat-tile cat-1" href="#providers" data-category="Plumber">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.66 5.66l1.2 1.2-6.5 6.5 1.5 1.5 6.5-6.5 1.2 1.2a4 4 0 0 0 5.66-5.66l-2.6 2.6-2-.7-.7-2Z"/></svg>
           <div><div class="name">Plumber</div><div class="meta">Leaks, fittings, tanks</div></div>
         </a>
-        <a class="cat-tile cat-2" href="#">
+        <a class="cat-tile cat-2" href="#providers" data-category="Cook">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18v-6a8 8 0 0 1 16 0v6"/><path d="M2 18h4v3H3a1 1 0 0 1-1-1v-2Z"/><path d="M18 18h4v2a1 1 0 0 1-1 1h-3v-3Z"/></svg>
           <div><div class="name">Cook</div><div class="meta">Daily meals, events</div></div>
         </a>
-        <a class="cat-tile cat-3" href="#">
+        <a class="cat-tile cat-3" href="#providers" data-category="Driver">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/><path d="M12 4V2M4 12H2M12 22v-2M22 12h-2"/></svg>
           <div><div class="name">Driver</div><div class="meta">Daily commute, trips</div></div>
         </a>
-        <a class="cat-tile cat-4" href="#">
+        <a class="cat-tile cat-4" href="#providers" data-category="Carpenter">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h6l2-3 3 6 2-3h5"/></svg>
           <div><div class="name">Carpenter</div><div class="meta">Furniture, fittings</div></div>
         </a>
-        <a class="cat-tile cat-5" href="#">
+        <a class="cat-tile cat-5" href="#providers" data-category="Painter">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3 21 6l-9.5 9.5-4 1 1-4L18 3Z"/><path d="M6 18c-1 1-1 2-3 3"/></svg>
           <div><div class="name">Painter</div><div class="meta">Walls, touch-ups</div></div>
         </a>
-        <a class="cat-tile cat-6" href="#">
+        <a class="cat-tile cat-6" href="#providers" data-category="Electrician">
           <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
           <div><div class="name">Electrician</div><div class="meta">Wiring, repairs</div></div>
         </a>
@@ -164,7 +164,7 @@
           <h2>Do the work. Let us find the customers.</h2>
           <p>List your trade, set your service area and rates, and get notified the moment someone nearby needs exactly what you do.</p>
         </div>
-        <button class="btn-white">Join as a provider</button>
+        <a href="register.html" class="btn-white">Join as a provider</a>
       </div>
     </div>
   </section>
@@ -210,6 +210,29 @@
     <span>Made for neighbourhoods, not just metros.</span>
   </div>
 </footer>
+
+
+<div id="providerModal" class="provider-modal" aria-hidden="true">
+  <div class="provider-modal-backdrop" data-close-modal></div>
+
+  <section class="provider-modal-content"
+           role="dialog"
+           aria-modal="true"
+           aria-labelledby="providerModalTitle">
+
+    <button type="button"
+            id="closeProviderModal"
+            class="provider-modal-close"
+            aria-label="Close providers">&times;</button>
+
+    <p class="eyebrow">FIND YOUR PROFESSIONAL</p>
+    <h2 id="providerModalTitle">Available providers</h2>
+    <p id="providerModalMessage">Choose a service to find providers.</p>
+
+    <div id="providerModalGrid" class="provider-modal-grid"></div>
+  </section>
+</div>
+
 <script src="index.js"></script>
 
 </body>

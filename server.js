@@ -9,6 +9,7 @@ import authRoutes from "./routes/authRoutes.js";
 import customerRoutes from "./routes/customerRoutes.js";
 import providerRoutes from "./routes/providerRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
+import publicProviderRoutes from "./routes/publicProviderRoutes.js";
 
 dotenv.config();
 
@@ -35,6 +36,7 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
+app.use("/api/providers", publicProviderRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/customer", customerRoutes);
 app.use("/api/provider", providerRoutes);
